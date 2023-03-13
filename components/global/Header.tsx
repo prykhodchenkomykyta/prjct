@@ -1,7 +1,13 @@
+import { FC } from 'react';
 import { Typography, Box, useTheme } from '@mui/material';
 import { tokens } from '@/ui//theme';
 
-const Header = ({ title, subtitle }) => {
+interface Props {
+  title: string;
+  subtitle: string;
+}
+
+const Header:FC<Props> = ({ title, subtitle }) => {
 	const theme = useTheme();
 	const colors = tokens(theme.palette.mode);
 	return (
