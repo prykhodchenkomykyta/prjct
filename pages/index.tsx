@@ -32,7 +32,7 @@ export default function Home() {
 
     setLoading(true);
     axios
-      .post("api/index.php", formData)
+      .post("/api/index.php", formData)
       .then((response) => {
         setData(response.data);
         localStorage.setItem("data", JSON.stringify(response.data));
