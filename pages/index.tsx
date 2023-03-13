@@ -32,7 +32,7 @@ export default function Home() {
 
     setLoading(true);
     axios
-      .post("https://prjct-721g0aegn-prykhodchenkomykyta.vercel.app/", formData)
+      .post("api/index.php", formData)
       .then((response) => {
         setData(response.data);
         localStorage.setItem("data", JSON.stringify(response.data));
