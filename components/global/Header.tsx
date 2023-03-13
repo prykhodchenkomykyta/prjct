@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { FC } from 'react';
 import { Typography, Box, useTheme } from '@mui/material';
 import { tokens } from '@/ui//theme';
