@@ -32,7 +32,7 @@ export default function Home() {
 
     setLoading(true);
     axios
-      .post("http://localhost/unigui/backend/index.php", formData)
+      .post("https://prjct-721g0aegn-prykhodchenkomykyta.vercel.app/", formData)
       .then((response) => {
         setData(response.data);
         localStorage.setItem("data", JSON.stringify(response.data));
