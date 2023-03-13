@@ -8,7 +8,6 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { Box } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "@/ui/theme";
-import { mockDataContacts } from "@/data/mockData";
 import { useTheme } from "@mui/material";
 import Header from "@/components/global/Header";
 import { CSVLink } from "react-csv";
@@ -46,58 +45,6 @@ export default function Home() {
     setData([]);
     setIsLocalStorageLoaded(false);
   };
-
-  const columns2 =
-    data.length > 0
-      ? Object.keys(data[0]).map((key) => ({
-          field: key,
-          headerName: key,
-          flex: 1,
-        }))
-      : [];
-
-  // const columns = [
-  //   { field: "id", headerName: "ID", flex: 0.5 },
-  //   { field: "registrarId", headerName: "Registrar ID" },
-  //   {
-  //     field: "name",
-  //     headerName: "Name",
-  //     flex: 1,
-  //     cellClassName: "name-column--cell",
-  //   },
-  //   {
-  //     field: "age",
-  //     headerName: "Age",
-  //     type: "number",
-  //     headerAlign: "left",
-  //     align: "left",
-  //   },
-  //   {
-  //     field: "phone",
-  //     headerName: "Phone Number",
-  //     flex: 1,
-  //   },
-  //   {
-  //     field: "email",
-  //     headerName: "Email",
-  //     flex: 1,
-  //   },
-  //   {
-  //     field: "address",
-  //     headerName: "Address",
-  //     flex: 1,
-  //   },
-  //   {
-  //     field: "city",
-  //     headerName: "City",
-  //     flex: 1,
-  //   },
-  //   {
-  //     field: "zipCode",
-  //     headerName: "ZipCode",
-  //     flex: 1,
-  //   },
-  // ];
 
   useEffect(() => {
     const localData = localStorage.getItem("data");
@@ -193,12 +140,6 @@ export default function Home() {
                         ))}
                       </tbody>
                     </table>
-                    // //columns2.length > 0 && 
-                    <DataGrid
-                      rows={data} // DATA FROM PHP CONVERTER //mockDataContacts
-                      columns={columns2}
-                      components={{ Toolbar: GridToolbar }}
-                    />
                     </>
                   )}
                 </Box>
